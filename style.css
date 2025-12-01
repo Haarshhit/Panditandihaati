@@ -1,0 +1,653 @@
+/* ------------------------------
+   Import Google Fonts
+   ------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins&display=swap');
+
+/* ------------------------------
+   Global Styles
+   ------------------------------ */
+body {
+  font-family: 'Poppins', sans-serif; /* Clean modern font */
+  margin: 0;
+  padding: 0;
+  background: #fffdf6; /* Light cream background */
+  color: #333;         /* Dark text for readability */
+}
+
+/* ------------------------------
+   Navigation Bar
+   ------------------------------ */
+nav ul {
+  display: flex;                /* Horizontal layout */
+  justify-content: center;      /* Center items */
+  list-style: none;             /* Remove bullets */
+  background: #ff9800;          /* Orange bar */
+  padding: 10px;
+  margin: 0;
+}
+nav li {
+  margin: 0 15px;               /* Space between links */
+}
+nav a {
+  text-decoration: none;        /* Remove underline */
+  color: white;                 /* White text */
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background 0.3s;  /* Smooth hover effect */
+}
+nav a:hover {
+  background: #e65100;          /* Darker orange on hover */
+}
+nav a.active {
+  background: #fff3e0;          /* Highlight current page */
+  color: #e65100;
+}
+
+/* ------------------------------
+   Hero Section (Top Banner)
+   ------------------------------ */
+header.hero {
+  background: linear-gradient(120deg, #ffc107, #ff9800); /* Golden-orange gradient */
+  padding: 70px 20px 40px;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 1.5s ease-in-out; /* Fade-in animation */
+}
+header.hero img.logo {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 70px; /* Logo size */
+}
+header.hero h1 {
+  font-family: 'Playfair Display', serif; /* Elegant font for title */
+  font-size: 3.2em;
+}
+header.hero .tagline {
+  font-size: 1.2em;
+  margin-top: 10px;
+  font-style: italic;
+  color: #4e342e; /* Dark brown accent */
+}
+header.hero .status {
+  font-weight: bold;
+  margin-top: 15px;
+  font-size: 1.1em;
+}
+
+/* ------------------------------
+   Zomato Button
+   ------------------------------ */
+a.zomato-order {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s;
+  background: #e23744; /* Zomato red */
+  color: white;
+}
+
+/* ------------------------------
+   Section Layout
+   ------------------------------ */
+section {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+section h2 {
+  color: #b14520; /* Deep orange-brown */
+  font-size: 2em;
+  font-family: 'Playfair Display', serif;
+}
+
+/* ------------------------------
+   About Section
+   ------------------------------ */
+.about img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Soft shadow */
+  margin-top: 15px;
+}
+
+/* ------------------------------
+   Menu Section (Default Layout)
+   ------------------------------ */
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+.menu-item img {
+  width: 140px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* ------------------------------
+   Menu Hover Effect (Overlay)
+   ------------------------------ */
+.menu-item {
+  display: inline-block;
+  margin: 15px;
+}
+.menu-img {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+.menu-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease; /* Smooth zoom */
+}
+.menu-img:hover img {
+  transform: scale(1.1); /* Zoom effect on hover */
+}
+.menu-img .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 152, 0, 0.9); /* Orange overlay */
+  color: white;
+  padding: 10px;
+  text-align: center;
+  transform: translateY(100%); /* Hidden by default */
+  transition: transform 0.3s ease;
+}
+.menu-img:hover .overlay {
+  transform: translateY(0); /* Slide up on hover */
+}
+.menu-img .overlay h4 {
+  margin: 0;
+  font-size: 1.1em;
+  font-family: 'Playfair Display', serif;
+}
+.menu-img .overlay p {
+  margin: 5px 0 0;
+  font-size: 0.9em;
+}
+
+/* ------------------------------
+   Modi Promo Section
+   ------------------------------ */
+.modi-promo {
+  text-align: center;
+}
+.modi-promo iframe {
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+/* ------------------------------
+   Timings Section
+   ------------------------------ */
+.timings ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.1em;
+}
+.timings li {
+  padding: 8px;
+  border-radius: 6px;
+  margin: 5px 0;
+  background: #fff0db;
+}
+.timings li.today {
+  background: #ffd54f;
+  font-weight: bold;
+  animation: pulse 1.2s infinite; /* Highlight today */
+}
+
+/* ------------------------------
+   Reviews Section
+   ------------------------------ */
+.reviews .review {
+  background: #fffaf0;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+.review strong {
+  color: #d35400;
+}
+.review-link {
+  text-align: center;
+  margin: 30px;
+}
+.review-link a {
+  background: #3f51b5; /* Blue button */
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* ------------------------------
+   Contact Section
+   ------------------------------ */
+.contact iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+/* ------------------------------
+   Shop Image
+   ------------------------------ */
+.shop-img {
+  display: block;
+  margin: 30px auto;
+  max-width: 1000px;
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* ------------------------------
+   Footer
+   ------------------------------ */
+footer {
+  background: #ffe0b2;
+  text-align: center;
+  padding: 20px;
+}
+
+/* ------------------------------
+   Animations
+   ------------------------------ */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0% { background-color: #ffeb3b; }
+  50% { background-color: #fff176; }
+  100% { background-color: #ffeb3b; }
+}
+
+/* ------------------------------
+   Responsive Design
+   ------------------------------ */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column; /* Stack nav links */
+    align-items: center;
+  }
+  header.hero h1 {
+    font-size: 2.2em; /* Smaller title on mobile */
+  }
+  .menu-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+/* ------------------------------
+   Login Page
+   ------------------------------ */
+.login {
+  max-width: 400px;
+  margin: 50px auto;
+  background: #fffaf0;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.login h2 {
+  color: #b14520;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
+}
+
+.login form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login label {
+  text-align: left;
+  font-weight: bold;
+  color: #333;
+}
+
+.login input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+.login button {
+  padding: 12px;
+  background: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login button:hover {
+  background: #e65100;
+}
+
+.signup-link {
+  margin-top: 15px;
+  font-size: 0.9em;
+}
+.signup-link a {
+  color: #3f51b5;
+  text-decoration: none;
+  font-weight: bold;
+}
+.signup-link a:hover {
+  text-decoration: underline;
+}
+/* ------------------------------
+   Signup Page
+   ------------------------------ */
+.signup {
+  max-width: 400px;
+  margin: 50px auto;
+  background: #fffaf0;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.signup h2 {
+  color: #b14520;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
+}
+
+.signup form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.signup label {
+  text-align: left;
+  font-weight: bold;
+  color: #333;
+}
+
+.signup input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+.signup button {
+  padding: 12px;
+  background: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.signup button:hover {
+  background: #e65100;
+}
+
+.login-link {
+  margin-top: 15px;
+  font-size: 0.9em;
+}
+.login-link a {
+  color: #3f51b5;
+  text-decoration: none;
+  font-weight: bold;
+}
+.login-link a:hover {
+  text-decoration: underline;
+}
+/* ------------------------------
+   Forgot Password Page
+   ------------------------------ */
+.forgot-password {
+  max-width: 400px;
+  margin: 50px auto;
+  background: #fffaf0;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.forgot-password h2 {
+  color: #b14520;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
+}
+
+.forgot-password form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.forgot-password label {
+  text-align: left;
+  font-weight: bold;
+  color: #333;
+}
+
+.forgot-password input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+.forgot-password button {
+  padding: 12px;
+  background: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.forgot-password button:hover {
+  background: #e65100;
+}
+
+.back-login {
+  margin-top: 15px;
+  font-size: 0.9em;
+}
+.back-login a {
+  color: #3f51b5;
+  text-decoration: none;
+  font-weight: bold;
+}
+.back-login a:hover {
+  text-decoration: underline;
+}
+.forgot-link {
+  margin-top: 8px;
+  font-size: 0.9em;
+}
+.forgot-link a {
+  color: #3f51b5;
+  text-decoration: none;
+  font-weight: bold;
+}
+.forgot-link a:hover {
+  text-decoration: underline;
+}
+/* Navigation Bar Layout */
+nav {
+  display: flex;
+  justify-content: space-between; /* left group vs right group */
+  align-items: center;
+  background: #ff9800;
+  padding: 10px 20px;
+}
+
+/* Left side links */
+nav ul.nav-left {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 15px;
+}
+
+/* Right side links (Login/Signup) */
+nav ul.nav-right {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background: #e65100;
+}
+
+nav a.active {
+  background: #fff3e0;
+  color: #e65100;
+}
+/* Filter Buttons */
+.filters {
+  text-align: center;
+  margin: 20px 0;
+}
+.filter-btn {
+  background: #ff9800;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  margin: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.filter-btn:hover {
+  background: #e65100;
+}
+.filter-btn.active {
+  background: #3f51b5;
+}
+
+/* Menu Grid Layout */
+.menu-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Staggered Animation */
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+/* Menu Grid Layout */
+.menu-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Menu Item Card */
+.menu-img {
+  position: relative;
+  width: 220px;
+  height: 160px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.menu-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.menu-img:hover img {
+  transform: scale(1.15) rotate(2deg);
+}
+
+/* Overlay */
+.menu-img .overlay {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  background: rgba(255, 152, 0, 0.95);
+  color: white;
+  padding: 15px;
+  text-align: center;
+  transition: bottom 0.5s ease;
+}
+
+.menu-img:hover .overlay {
+  bottom: 0;
+}
+
+.menu-img .overlay h4, 
+.menu-img .overlay p {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+.menu-img:hover .overlay h4,
+.menu-img:hover .overlay p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+
+
