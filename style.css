@@ -763,6 +763,49 @@ nav a.active {
   font-weight: bold;
   color: #333;
 }
+.modi-promo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.modi-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.modi-text h2 {
+  color: #ff9800;
+  margin-bottom: 10px;
+}
+
+.modi-text p {
+  font-size: 1.1em;
+  line-height: 1.5;
+}
+
+.modi-video {
+  flex: 1;
+  min-width: 300px;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.modi-video iframe {
+  width: 110%;
+  height: 100%;
+  transform: translateX(-5%);
+  border: none;
+}
+
+
 
 
 
