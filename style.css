@@ -509,7 +509,7 @@ footer {
 /* Navigation Bar Layout */
 nav {
   display: flex;
-  justify-content: space-between; /* left group vs right group */
+  justify-content: space-between;  
   align-items: center;
   background: #ff9800;
   padding: 10px 20px;
@@ -731,7 +731,7 @@ nav a.active {
   max-width: 500px;
   margin: 40px auto;
   padding: 20px;
-  background: #fff8e1;
+  background: #fdfcfb;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   text-align: center;
@@ -761,49 +761,118 @@ nav a.active {
 
 .timings li span {
   font-weight: bold;
-  color: #333;
+  color: #c1bcbc;
 }
-.modi-promo {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 30px;
-  max-width: 1000px;
+.opening-hours {
+  max-width: 500px;
   margin: 40px auto;
   padding: 20px;
+  background: #f1f0ec;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
-.modi-text {
-  flex: 1;
-  min-width: 280px;
-}
-
-.modi-text h2 {
+.opening-hours h3 {
+  font-size: 1.5em;
   color: #ff9800;
   margin-bottom: 10px;
 }
 
-.modi-text p {
-  font-size: 1.1em;
-  line-height: 1.5;
+.opening-hours ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
+.opening-hours li {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 12px;
+  margin: 6px 0;
+  background: #fff3cd;
+  border-radius: 6px;
+  font-size: 1.05em;
+}
+
+.opening-hours .day {
+  text-align: left;
+  font-weight: 500;
+}
+
+.opening-hours .time {
+  text-align: right;
+  font-weight: bold;
+  color: #ede4e4;
+}
+.opening-hours {
+  margin-top: 20px;
+  background: #f4f2f0;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.opening-hours h3 {
+  font-size: 1.4em;
+  color: #fe9703;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.opening-hours ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.opening-hours li {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 12px;
+  margin: 5px 0;
+  background: #d8a90f;
+  border-radius: 6px;
+}
+
+.opening-hours .day {
+  font-weight: 500;
+}
+
+.opening-hours .time {
+  font-weight: bold;
+  color: #0a0a0a;
+}
 .modi-video {
   flex: 1;
   min-width: 300px;
-  height: 220px;
+  height: 500px;  
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 2px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .modi-video iframe {
-  width: 110%;
-  height: 100%;
-  transform: translateX(-5%);
+  width: 120%;  
+  height: 95%;
+  transform: translateX(-10%);
   border: none;
 }
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.opening-hours,
+.footer-info,
+.footer-map {
+  flex: 1;
+  min-width: 280px;
+}
+
 
 
 
