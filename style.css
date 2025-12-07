@@ -15,18 +15,53 @@ body {
 }
 
 /* ------------------------------
-   Navigation Bar
+   Navigation Bar with Hamburger
    ------------------------------ */
+/* Navigation Bar */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: #ff9800;
-  padding: 10px 20px;
+  padding: 12px 18px;
+  position: relative;
+  z-index: 100;
 }
 
-nav ul.nav-left,
-nav ul.nav-right {
+.nav-logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+  text-decoration: none;
+}
+
+/* Hamburger */
+#menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 5px;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+/* Nav Lists */
+nav ul {
   display: flex;
   list-style: none;
   margin: 0;
@@ -34,11 +69,14 @@ nav ul.nav-right {
 }
 
 nav ul.nav-left {
-  gap: 15px;
+  gap: 14px;
 }
 
 nav ul.nav-right {
-  gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 10px;
 }
 
 nav li {
@@ -48,10 +86,12 @@ nav li {
 nav a {
   text-decoration: none;
   color: white;
-  font-weight: bold;
-  padding: 8px 12px;
-  border-radius: 5px;
-  transition: background 0.3s;
+  font-weight: 600;
+  font-size: 0.95em;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+  display: block;
 }
 
 nav a:hover {
@@ -61,6 +101,62 @@ nav a:hover {
 nav a.active {
   background: #fff3e0;
   color: #e65100;
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  nav ul.nav-left,
+  nav ul.nav-right {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 320px;
+    height: 100vh;
+    background: #ff9800;
+    flex-direction: column;
+    padding: 80px 20px 30px;
+    gap: 0;
+    transition: right 0.4s ease;
+    box-shadow: -5px 0 20px rgba(0,0,0,0.3);
+    z-index: 99;
+    overflow-y: auto;
+  }
+
+  nav ul.nav-left li,
+  nav ul.nav-right li {
+    width: 100%;
+  }
+
+  nav ul.nav-left a,
+  nav ul.nav-right a {
+    padding: 15px 10px;
+    border-radius: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    width: 100%;
+    background: none;
+  }
+  #menu-toggle:checked ~ ul.nav-left,
+  #menu-toggle:checked ~ ul.nav-right {
+    right: 0;
+  }
+
+  #menu-toggle:checked ~ .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+
+  #menu-toggle:checked ~ .hamburger span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  #menu-toggle:checked ~ .hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
 }
 
 /* ------------------------------
@@ -167,6 +263,7 @@ section h2 {
   background: #3f51b5;
 }
 
+
 /* ------------------------------
    Menu Grid Layout
    ------------------------------ */
@@ -216,6 +313,31 @@ section h2 {
   margin: 5px 0 0;
   font-size: 0.9em;
 }
+nav ul.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* tighter spacing */
+  margin-right: 10px;
+}
+
+nav ul.nav-right li {
+  margin: 0;
+}
+
+nav ul.nav-right a {
+  padding: 6px 10px;
+  font-size: 0.9em;
+  font-weight: 600;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: background 0.3s ease;
+}
+
+nav ul.nav-right a:hover {
+  background: #e65100;
+}
+
+
 
 /* ------------------------------
    Modi Promo Section
@@ -735,27 +857,126 @@ footer,
 }
 
 /* ------------------------------
-   Responsive Design
+   RESPONSIVE DESIGN - MOBILE
    ------------------------------ */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
+  /* Show Hamburger Button */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hide and prepare nav menus for mobile */
+  nav ul.nav-left,
+  nav ul.nav-right,
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 320px;
+    height: 100vh;
+    background: #ff9800;
+    flex-direction: column;
+    padding: 80px 20px 30px;
+    gap: 0;
+    transition: right 0.4s ease;
+    box-shadow: -5px 0 20px rgba(0,0,0,0.3);
+    z-index: 99;
+    overflow-y: auto;
+  }
+
+  /* Hide right menu on mobile or combine */
+  nav ul.nav-right {
+    display: flex;
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  /* Menu Items */
+  nav ul.nav-left li,
+  nav ul.nav-right li,
+  .nav-menu li {
+    margin: 0;
+    width: 100%;
+  }
+
+  nav ul.nav-left a,
+  nav ul.nav-right a,
+  .nav-menu a {
+    padding: 15px 10px;
+    border-radius: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    width: 100%;
+  }
+
+  /* Show Menu when checkbox is checked */
+  #menu-toggle:checked ~ ul.nav-left,
+  #menu-toggle:checked ~ .nav-menu {
+    right: 0;
+  }
+
+  /* Transform Hamburger to X */
+  #menu-toggle:checked ~ .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+  }
+
+  #menu-toggle:checked ~ .hamburger span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  #menu-toggle:checked ~ .hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+  }
+
+  /* Dark Overlay */
+  .nav-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.6);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    z-index: 50;
+  }
+
+  #menu-toggle:checked ~ .nav-overlay {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  /* Other Mobile Adjustments */
+  header.hero h1 {
+    font-size: 2.2em;
+  }
+
   .reviews-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
+/* ------------------------------
+   RESPONSIVE - TABLET
+   ------------------------------ */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-
-  nav ul.nav-left,
-  nav ul.nav-right {
-    flex-direction: column;
-    align-items: center;
+  
+  nav ul.nav-left {
+    gap: 10px;
   }
-
-  header.hero h1 {
-    font-size: 2.2em;
+  
+  nav a {
+    padding: 6px 10px;
+    font-size: 0.95em;
   }
 }
 
