@@ -1,11 +1,5 @@
-/* ------------------------------
-   Import Google Fonts
-   ------------------------------ */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins&display=swap');
 
-/* ------------------------------
-   Global Styles
-   ------------------------------ */
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -14,10 +8,6 @@ body {
   color: #333;
 }
 
-/* ------------------------------
-   Navigation Bar with Hamburger
-   ------------------------------ */
-/* Navigation Bar */
 nav {
   display: flex;
   justify-content: space-between;
@@ -36,7 +26,6 @@ nav {
   text-decoration: none;
 }
 
-/* Hamburger */
 #menu-toggle {
   display: none;
 }
@@ -60,7 +49,6 @@ nav {
   display: block;
 }
 
-/* Nav Lists */
 nav ul {
   display: flex;
   list-style: none;
@@ -103,65 +91,6 @@ nav a.active {
   color: #e65100;
 }
 
-/* Responsive - Mobile */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-
-  nav ul.nav-left,
-  nav ul.nav-right {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 75%;
-    max-width: 320px;
-    height: 100vh;
-    background: #ff9800;
-    flex-direction: column;
-    padding: 80px 20px 30px;
-    gap: 0;
-    transition: right 0.4s ease;
-    box-shadow: -5px 0 20px rgba(0,0,0,0.3);
-    z-index: 99;
-    overflow-y: auto;
-  }
-
-  nav ul.nav-left li,
-  nav ul.nav-right li {
-    width: 100%;
-  }
-
-  nav ul.nav-left a,
-  nav ul.nav-right a {
-    padding: 15px 10px;
-    border-radius: 0;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    width: 100%;
-    background: none;
-  }
-  #menu-toggle:checked ~ ul.nav-left,
-  #menu-toggle:checked ~ ul.nav-right {
-    right: 0;
-  }
-
-  #menu-toggle:checked ~ .hamburger span:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
-  }
-
-  #menu-toggle:checked ~ .hamburger span:nth-child(2) {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-
-  #menu-toggle:checked ~ .hamburger span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
-  }
-}
-
-/* ------------------------------
-   Hero Section (Top Banner)
-   ------------------------------ */
 header.hero {
   background: linear-gradient(120deg, #ffc107, #ff9800);
   padding: 70px 20px 40px;
@@ -195,9 +124,6 @@ header.hero .status {
   font-size: 1.1em;
 }
 
-/* ------------------------------
-   Zomato Button
-   ------------------------------ */
 a.zomato-order {
   display: inline-block;
   margin-top: 20px;
@@ -210,9 +136,6 @@ a.zomato-order {
   color: white;
 }
 
-/* ------------------------------
-   Section Layout
-   ------------------------------ */
 section {
   padding: 40px 20px;
   max-width: 1000px;
@@ -225,9 +148,6 @@ section h2 {
   font-family: 'Playfair Display', serif;
 }
 
-/* ------------------------------
-   About Section
-   ------------------------------ */
 .about img {
   max-width: 100%;
   border-radius: 12px;
@@ -235,9 +155,6 @@ section h2 {
   margin-top: 15px;
 }
 
-/* ------------------------------
-   Filter Buttons
-   ------------------------------ */
 .filters {
   text-align: center;
   margin: 20px 0;
@@ -263,14 +180,11 @@ section h2 {
   background: #3f51b5;
 }
 
-
-/* ------------------------------
-   Menu Grid Layout
-   ------------------------------ */
 .menu-item {
   display: inline-block;
   margin: 15px;
 }
+
 .menu-img {
   position: relative;
   width: 200px;
@@ -279,69 +193,47 @@ section h2 {
   border-radius: 10px;
   box-shadow: 0 3px 8px rgba(0,0,0,0.2);
 }
+
 .menu-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.3s ease; /* Smooth zoom */
+  transition: transform 0.3s ease;
 }
+
 .menu-img:hover img {
-  transform: scale(1.1); /* Zoom effect on hover */
+  transform: scale(1.1);
 }
+
 .menu-img .overlay {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 152, 0, 0.9); /* Orange overlay */
+  background: rgba(255, 152, 0, 0.9);
   color: white;
   padding: 10px;
   text-align: center;
-  transform: translateY(100%); /* Hidden by default */
+  transform: translateY(100%);
   transition: transform 0.3s ease;
 }
+
 .menu-img:hover .overlay {
-  transform: translateY(0); /* Slide up on hover */
+  transform: translateY(0);
 }
+
 .menu-img .overlay h4 {
   margin: 0;
   font-size: 1.1em;
   font-family: 'Playfair Display', serif;
 }
+
 .menu-img .overlay p {
   margin: 5px 0 0;
   font-size: 0.9em;
 }
-nav ul.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 8px; /* tighter spacing */
-  margin-right: 10px;
-}
 
-nav ul.nav-right li {
-  margin: 0;
-}
-
-nav ul.nav-right a {
-  padding: 6px 10px;
-  font-size: 0.9em;
-  font-weight: 600;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.1);
-  transition: background 0.3s ease;
-}
-
-nav ul.nav-right a:hover {
-  background: #e65100;
-}
-
-
-
-/* ------------------------------
-   Modi Promo Section
-   ------------------------------ */
 .modi-promo {
   max-width: 960px;
   margin: 60px auto;
@@ -399,9 +291,6 @@ nav ul.nav-right a:hover {
   pointer-events: none;
 }
 
-/* ------------------------------
-   Opening Hours Section
-   ------------------------------ */
 .opening-hours {
   margin-top: 20px;
   background: #f4f2f0;
@@ -441,9 +330,6 @@ nav ul.nav-right a:hover {
   color: #0a0a0a;
 }
 
-/* ------------------------------
-   Reviews Section
-   ------------------------------ */
 .reviews-section {
   max-width: 1100px;
   margin: 48px auto;
@@ -562,9 +448,6 @@ nav ul.nav-right a:hover {
   transform: translateY(-2px);
 }
 
-/* ------------------------------
-   Contact Section
-   ------------------------------ */
 .contact iframe {
   width: 100%;
   height: 300px;
@@ -573,9 +456,6 @@ nav ul.nav-right a:hover {
   margin-top: 20px;
 }
 
-/* ------------------------------
-   Shop Image
-   ------------------------------ */
 .shop-img {
   display: block;
   margin: 30px auto;
@@ -585,9 +465,6 @@ nav ul.nav-right a:hover {
   border-radius: 15px;
 }
 
-/* ------------------------------
-   Footer
-   ------------------------------ */
 footer,
 .footer {
   background: #333;
@@ -636,9 +513,6 @@ footer,
   padding-top: 10px;
 }
 
-/* ------------------------------
-   Login Page
-   ------------------------------ */
 .login {
   max-width: 400px;
   margin: 50px auto;
@@ -707,9 +581,6 @@ footer,
   text-decoration: underline;
 }
 
-/* ------------------------------
-   Signup Page
-   ------------------------------ */
 .signup {
   max-width: 400px;
   margin: 50px auto;
@@ -775,9 +646,6 @@ footer,
   text-decoration: underline;
 }
 
-/* ------------------------------
-   Forgot Password Page
-   ------------------------------ */
 .forgot-password {
   max-width: 400px;
   margin: 50px auto;
@@ -843,9 +711,6 @@ footer,
   text-decoration: underline;
 }
 
-/* ------------------------------
-   Animations
-   ------------------------------ */
 @keyframes fadeIn {
   0% { opacity: 0; transform: translateY(-20px); }
   100% { opacity: 1; transform: translateY(0); }
@@ -856,16 +721,11 @@ footer,
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* ------------------------------
-   RESPONSIVE DESIGN - MOBILE
-   ------------------------------ */
 @media (max-width: 768px) {
-  /* Show Hamburger Button */
   .hamburger {
     display: flex;
   }
 
-  /* Hide and prepare nav menus for mobile */
   nav ul.nav-left,
   nav ul.nav-right,
   .nav-menu {
@@ -885,7 +745,6 @@ footer,
     overflow-y: auto;
   }
 
-  /* Hide right menu on mobile or combine */
   nav ul.nav-right {
     display: flex;
     position: static;
@@ -895,7 +754,6 @@ footer,
     box-shadow: none;
   }
 
-  /* Menu Items */
   nav ul.nav-left li,
   nav ul.nav-right li,
   .nav-menu li {
@@ -912,13 +770,11 @@ footer,
     width: 100%;
   }
 
-  /* Show Menu when checkbox is checked */
   #menu-toggle:checked ~ ul.nav-left,
   #menu-toggle:checked ~ .nav-menu {
     right: 0;
   }
 
-  /* Transform Hamburger to X */
   #menu-toggle:checked ~ .hamburger span:nth-child(1) {
     transform: rotate(45deg) translate(8px, 8px);
   }
@@ -932,7 +788,6 @@ footer,
     transform: rotate(-45deg) translate(8px, -8px);
   }
 
-  /* Dark Overlay */
   .nav-overlay {
     display: block;
     position: fixed;
@@ -952,7 +807,6 @@ footer,
     pointer-events: all;
   }
 
-  /* Other Mobile Adjustments */
   header.hero h1 {
     font-size: 2.2em;
   }
@@ -962,9 +816,6 @@ footer,
   }
 }
 
-/* ------------------------------
-   RESPONSIVE - TABLET
-   ------------------------------ */
 @media (max-width: 1024px) and (min-width: 769px) {
   .reviews-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -985,4 +836,3 @@ footer,
     grid-template-columns: 1fr;
   }
 }
-
